@@ -37,8 +37,8 @@ function to extract peaks from an Array, TypedArray, or AudioBuffer
 
 ```javascript
 {
-    length: `number` Number of calculated peaks,
-    data: `TypedArray` Calculated peaks array,
-    bits: `(8|16|32)` Resolution of calculated peaks.
+    length: `number` //Number of calculated peaks,
+    data: `TypedArray` //Calculated peaks array,
+    bits: `(8|16|32)` //Resolution of calculated peaks.
 }
 ```
