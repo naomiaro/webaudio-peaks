@@ -16,7 +16,7 @@ function createConfig(options) {
   }
 
   return {
-    entry: __dirname + "/src/index.js",
+    entry: __dirname + "/index.js",
     output: {
       path:  __dirname + "/dist",
       filename: 'webaudio-peaks.' +
