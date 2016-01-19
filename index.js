@@ -122,7 +122,7 @@ module.exports = function(source, samplesPerPixel, isMono, cueIn, cueOut, bits) 
     var channel;
     var slice;
 
-    if (typeof source.subarray === undefined) {
+    if (typeof source.subarray === "undefined") {
         for (c = 0; c < numChan; c++) {
             channel = source.getChannelData(c);
             cueIn = cueIn || 0;
