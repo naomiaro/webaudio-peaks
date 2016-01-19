@@ -1,0 +1,25 @@
+{
+  "name": "webaudio-peaks",
+  "version": "1.0.0",
+  "description": "Small library to extract peaks from an array of audio samples.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naomiaro/webaudio-peaks.git"
+  },
+  "keywords": [
+    "webaudio",
+    "peaks",
+    "waveform",
+    "visualization"
+  ],
+  "author": "Naomi Aro <naomiaro@gmail.com> (http://naomiaro.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/naomiaro/webaudio-peaks/issues"
+  },
+  "homepage": "https://github.com/naomiaro/webaudio-peaks#readme"
+}
