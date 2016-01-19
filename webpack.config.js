@@ -18,7 +18,7 @@ function createConfig(options) {
   return {
     entry: __dirname + "/src/index.js",
     output: {
-      path:  __dirname + "/dist/js",
+      path:  __dirname + "/dist",
       filename: 'webaudio-peaks.' +
         options.target +
         (options.minified ? '.min' : '')
