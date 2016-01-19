@@ -44,3 +44,7 @@ function to extract peaks from a TypedArray, or AudioBuffer
     bits: `(8|16|32)` //Resolution of calculated peaks.
 }
 ```
+
+## License
+
+[MIT License](http://doge.mit-license.org)
