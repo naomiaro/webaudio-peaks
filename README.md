@@ -22,7 +22,7 @@ audioCtx.decodeAudioData(audioData, function(decodedData) {
 ```
 
 ###extractPeaks(source, samplesPerPixel, isMono, cueIn, cueOut, bits)
-function to extract peaks from an Array, TypedArray, or AudioBuffer
+function to extract peaks from a TypedArray, or AudioBuffer
 
 **Params**
 
@@ -38,7 +38,9 @@ function to extract peaks from an Array, TypedArray, or AudioBuffer
 ```javascript
 {
     length: `number` //Number of calculated peaks,
-    data: `Int{bits}Array` //Calculated peaks array,
+    //Computed peak data, length ==  #channels or 1 if isMono == true
+    //Each entry of type `Int{bits}Array`
+    data: `Array`
     bits: `(8|16|32)` //Resolution of calculated peaks.
 }
 ```
