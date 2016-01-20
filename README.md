@@ -2,6 +2,10 @@ webaudio-peaks
 =================
 Small library to extract peaks from an array of audio samples or a webaudio AudioBuffer.
 
+[![Build Status](https://travis-ci.org/naomiaro/webaudio-peaks.svg)](https://travis-ci.org/naomiaro/webaudio-peaks)
+
+[![Coverage Status](https://coveralls.io/repos/naomiaro/webaudio-peaks/badge.svg?branch=master&service=github)](https://coveralls.io/github/naomiaro/webaudio-peaks?branch=master)
+
 ## Installation
 
   `npm install webaudio-peaks`
