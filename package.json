@@ -42,6 +42,7 @@
     "webpack": "^1.12.11"
   },
   "scripts": {
+    "postversion": "git push && git push --tags",
     "test": "./node_modules/karma/bin/karma start --browsers Firefox --single-run"
   }
 }
