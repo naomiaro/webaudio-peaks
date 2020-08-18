@@ -4,5 +4,5 @@ export type PeakData = {
     bits: number
 }
 
-export default function webaudioPeaks(buffer: ArrayBuffer, samplesPerPixel?: number, mono?: boolean, cueIn
+export default function webaudioPeaks(buffer: AudioBuffer, samplesPerPixel?: number, mono?: boolean, cueIn
     ?: number, cueOut?: number): PeakData
