@@ -1,36 +1,33 @@
-var webpack = require("webpack");
-var createVariants = require('parallel-webpack').createVariants;
+const createVariants = require("parallel-webpack").createVariants;
+const TerserPlugin = require("terser-webpack-plugin");
 
 function createConfig(options) {
-  var plugins = [
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin()
-  ];
-  if (options.minified) {
-    plugins.push(new webpack.optimize.UglifyJsPlugin({
-      sourceMap: false,
-      compress: {
-        warnings: false
-      }
-    }));
-  }
-
   return {
     entry: __dirname + "/index.js",
     output: {
-      path:  __dirname + "/dist",
-      filename: 'webaudio-peaks.' +
+      path: __dirname + "/dist",
+      filename:
+        "webaudio-peaks." +
         options.target +
-        (options.minified ? '.min' : '')
-        + '.js',
-      library: 'webaudioPeaks',
-      libraryTarget: options.target
+        (options.minified ? ".min" : "") +
+        ".js",
+      library: {
+        name: "WebaudioPeaks",
+        type: options.target,
+      },
     },
-    plugins: plugins
+    optimization: {
+      minimize: options.minified,
+      minimizer: [new TerserPlugin()],
+    },
+    mode: "production",
   };
 }
 
-module.exports = createVariants({
-  minified: [true, false],
-  target: ['var', 'commonjs2', 'umd', 'amd']
-}, createConfig);
+module.exports = createVariants(
+  {
+    minified: [true, false],
+    target: ["var", "commonjs2", "umd", "amd"],
+  },
+  createConfig
+);

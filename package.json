@@ -21,29 +21,13 @@
   },
   "homepage": "https://github.com/naomiaro/webaudio-peaks#readme",
   "devDependencies": {
-    "@mohayonao/web-audio-api-shim": "^0.3.0",
-    "chai": "^3.4.1",
-    "chai-as-promised": "^5.1.0",
-    "coveralls": "^2.11.4",
-    "istanbul": "^0.4.1",
-    "karma": "^0.13.15",
-    "karma-chai": "^0.1.0",
-    "karma-chai-as-promised": "^0.1.2",
-    "karma-chrome-launcher": "^0.2.1",
-    "karma-coverage": "^0.5.3",
-    "karma-firefox-launcher": "^0.1.7",
-    "karma-mocha": "^0.2.1",
-    "karma-nyan-reporter": "^0.2.2",
-    "karma-requirejs": "^0.2.2",
-    "karma-sourcemap-loader": "^0.3.6",
-    "karma-webpack": "^1.7.0",
-    "mocha": "^2.3.4",
-    "parallel-webpack": "^1.2.0",
-    "requirejs": "^2.1.22",
-    "webpack": "^1.12.11"
+    "parallel-webpack": "^2.6.0",
+    "prettier": "2.3.2",
+    "webpack": "^5.47.0",
+    "webpack-cli": "^4.7.2"
   },
   "scripts": {
-    "postversion": "git push && git push --tags",
-    "test": "./node_modules/karma/bin/karma start --browsers Firefox --single-run"
+    "build": "webpack",
+    "postversion": "git push && git push --tags"
   }
 }

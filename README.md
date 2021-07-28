@@ -1,5 +1,5 @@
-webaudio-peaks
-=================
+# webaudio-peaks
+
 Small library to extract peaks from an array of audio samples or a webaudio AudioBuffer.
 
 [![Build Status](https://travis-ci.org/naomiaro/webaudio-peaks.svg)](https://travis-ci.org/naomiaro/webaudio-peaks)
@@ -8,18 +8,16 @@ Small library to extract peaks from an array of audio samples or a webaudio Audi
 
 ## Installation
 
-  `npm install webaudio-peaks`
-
+`npm install webaudio-peaks`
 
 ## Basic Usage
 
 ```javascript
-var extractPeaks = require('webaudio-peaks');
+var extractPeaks = require("webaudio-peaks");
 
 var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 //decode an ArrayBuffer into an AudioBuffer
-audioCtx.decodeAudioData(audioData, function(decodedData) {
-
+audioCtx.decodeAudioData(audioData, function (decodedData) {
   //calculate peaks from an AudioBuffer
   var peaks = extractPeaks(decodedData, 10000, true);
 });
@@ -41,11 +39,11 @@ function to extract peaks from a TypedArray, or AudioBuffer
 
 ```javascript
 {
-    length: `number` //Number of calculated peaks,
-    //Computed peak data, length ==  #channels or 1 if isMono == true
-    //Each entry of type `Int{bits}Array`
-    data: `Array`
-    bits: `(8|16|32)` //Resolution of calculated peaks.
+  length: `number`; //Number of calculated peaks,
+  //Computed peak data, length ==  #channels or 1 if isMono == true
+  //Each entry of type `Int{bits}Array`
+  data: `Array`;
+  bits: `(8|16|32)`; //Resolution of calculated peaks.
 }
 ```
 
