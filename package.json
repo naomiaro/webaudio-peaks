@@ -28,6 +28,7 @@
   },
   "scripts": {
     "build": "webpack",
+    "version": "npm run build && git add -A dist",
     "postversion": "git push && git push --tags"
   }
 }
