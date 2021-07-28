@@ -14,7 +14,7 @@
     "waveform",
     "visualization"
   ],
-  "author": "Naomi Aro <naomiaro@gmail.com> (http://naomiaro.github.io/)",
+  "author": "Naomi Aro <naomiaro@gmail.com> (https://naomiaro.github.io/)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/naomiaro/webaudio-peaks/issues"

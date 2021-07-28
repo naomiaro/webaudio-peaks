@@ -8,7 +8,7 @@ export type PeakData = {
 };
 
 export default function WebaudioPeaks(
-  buffer: AudioBuffer,
+  buffer: AudioBuffer | Float32Array,
   samplesPerPixel?: number,
   mono?: boolean,
   cueIn?: number,
