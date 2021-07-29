@@ -22,7 +22,7 @@ function findMinMax(array) {
 
   return {
     min: min,
-    max: max,
+    max: max
   };
 }
 
@@ -126,8 +126,8 @@ module.exports = function (
   cueOut,
   bits
 ) {
-  samplesPerPixel = defaultNumber(samplesPerPixel, 10000);
-  bits = defaultNumber(bits, 8);
+  samplesPerPixel = defaultNumber(samplesPerPixel, 1000);
+  bits = defaultNumber(bits, 16);
 
   if (isMono === null || isMono === undefined) {
     isMono = true;
@@ -168,6 +168,6 @@ module.exports = function (
   return {
     length: numPeaks,
     data: peaks,
-    bits: bits,
+    bits: bits
   };
 };

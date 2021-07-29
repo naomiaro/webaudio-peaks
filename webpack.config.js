@@ -13,21 +13,21 @@ function createConfig(options) {
         ".js",
       library: {
         name: "WebaudioPeaks",
-        type: options.target,
-      },
+        type: options.target
+      }
     },
     optimization: {
       minimize: options.minified,
-      minimizer: [new TerserPlugin()],
+      minimizer: [new TerserPlugin()]
     },
-    mode: "production",
+    mode: "production"
   };
 }
 
 module.exports = createVariants(
   {
     minified: [true, false],
-    target: ["var", "commonjs2", "umd", "amd"],
+    target: ["var", "commonjs2", "umd", "amd"]
   },
   createConfig
 );
