@@ -13,5 +13,5 @@ export default function WebaudioPeaks(
   mono?: boolean,
   cueIn?: number,
   cueOut?: number,
-  bits: Bits,
+  bits?: Bits,
 ): PeakData;
