@@ -7,8 +7,6 @@ define("WebaudioPeaks", [], () => { return /******/ (() => { // webpackBootstrap
 
 
 
-//http://jsperf.com/typed-array-min-max/2
-//plain for loop for finding min/max is way faster than anything else.
 /**
  * @param {TypedArray} array - Subarray of audio to calculate peaks from.
  */
@@ -31,7 +29,7 @@ function findMinMax(array) {
 
   return {
     min: min,
-    max: max,
+    max: max
   };
 }
 
@@ -41,7 +39,7 @@ function findMinMax(array) {
  */
 function convert(n, bits) {
   var max = Math.pow(2, bits - 1);
-  var v = n < 0 ? n * max : n * max - 1;
+  var v = n < 0 ? n * max : n * (max - 1);
   return Math.max(-max, Math.min(max - 1, v));
 }
 
@@ -124,8 +122,10 @@ function defaultNumber(value, defaultNumber) {
 /**
  * @param {AudioBuffer,TypedArray} source - Source of audio samples for peak calculations.
  * @param {Number} samplesPerPixel - Number of audio samples per peak.
+ * @param {Boolean} isMono - Whether to render the channels to a single array.
  * @param {Number} cueIn - index in channel to start peak calculations from.
  * @param {Number} cueOut - index in channel to end peak calculations from (non-inclusive).
+ * @param {Number} bits - number of bits for a peak.
  */
 module.exports = function (
   source,
@@ -135,8 +135,8 @@ module.exports = function (
   cueOut,
   bits
 ) {
-  samplesPerPixel = defaultNumber(samplesPerPixel, 10000);
-  bits = defaultNumber(bits, 8);
+  samplesPerPixel = defaultNumber(samplesPerPixel, 1000);
+  bits = defaultNumber(bits, 16);
 
   if (isMono === null || isMono === undefined) {
     isMono = true;
@@ -177,7 +177,7 @@ module.exports = function (
   return {
     length: numPeaks,
     data: peaks,
-    bits: bits,
+    bits: bits
   };
 };
 
