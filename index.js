@@ -32,7 +32,7 @@ function findMinMax(array) {
  */
 function convert(n, bits) {
   var max = Math.pow(2, bits - 1);
-  var v = n < 0 ? n * max : n * max - 1;
+  var v = n < 0 ? n * max : n * (max - 1);
   return Math.max(-max, Math.min(max - 1, v));
 }
 
@@ -115,8 +115,10 @@ function defaultNumber(value, defaultNumber) {
 /**
  * @param {AudioBuffer,TypedArray} source - Source of audio samples for peak calculations.
  * @param {Number} samplesPerPixel - Number of audio samples per peak.
+ * @param {Boolean} isMono - Whether to render the channels to a single array.
  * @param {Number} cueIn - index in channel to start peak calculations from.
  * @param {Number} cueOut - index in channel to end peak calculations from (non-inclusive).
+ * @param {Number} bits - number of bits for a peak.
  */
 module.exports = function (
   source,
