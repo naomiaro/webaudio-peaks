@@ -21,7 +21,7 @@ test("Cues of zero gives empty peaks", () => {
   });
 });
 
-test("Peaks length respects samplesPerPixel", () => {
+test("Peak length respects samplesPerPixel", () => {
   const samplesPerPixel = 1000;
   const sampleRate = 44100;
   const buffer = new AudioBuffer({ length: sampleRate, sampleRate });
@@ -32,6 +32,19 @@ test("Peaks length respects samplesPerPixel", () => {
   ).toStrictEqual({
     length: expectedPeakLength,
     data: [new Int16Array(expectedPeakLength * 2)],
+    bits: 16
+  });
+});
+
+test("Calculates proper peaks", () => {
+  const samplesPerPixel = 1000;
+  const sampleRate = 44100;
+  const samplesArray = new Float32Array([0, -0.25, -0.33, 0.45, 0.86, 0.77]); // -0.33,0.86
+  const expectedPeakLength = Math.ceil(samplesArray.length / samplesPerPixel);
+
+  expect(extractPeaks(samplesArray, samplesPerPixel)).toStrictEqual({
+    length: expectedPeakLength,
+    data: [new Int16Array([-10813, 28179])],
     bits: 16
   });
 });
